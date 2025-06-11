@@ -3,13 +3,15 @@
 Stop-gap solution for automatically creating and maintaining dynamic albums, until they are natively supported in Immich.
 Dynamic albums are albums where the assets are based on some query or a rule, for example - my `favorited` pictures in `Italy` in `2023`, or all pictures of my `wife` and `me`.
 Manually maintaining such albums is very tedious, hence the need for some automated way of doing it.
-This has been requested in https://github.com/immich-app/immich/discussions/1673, but as of January 2024 it is not natively supported in Immich.
+This has been requested in https://github.com/immich-app/immich/discussions/1673, but as of June 2025 it is not natively supported in Immich.
 
-The current version should work with any fairly recent Immich version, but it has only been tested with v1.125.6.
+The current version should work with any fairly recent Immich version, but it has only been tested with v1.134.0.
 
 ## Configuration
 
-Besides few standard configuration options (such as Immich URL and API key), the main configuration is a json file, describing the albums to be maintained - the name of the album and the search query to be used to populate the album. Here is an example showcasing all configuration features:
+Besides few standard configuration options (such as Immich URL and API key), the main configuration is a json file, describing the albums to be maintained - the name of the album and the search query to be used to populate the album. Here is an example showcasing all configuration features.
+
+IMPORTANT NOTE! The comment lines, beginning with "#" must be removed in order to work properly as a JSON file.
 
 ```json
 [

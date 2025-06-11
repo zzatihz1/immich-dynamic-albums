@@ -61,6 +61,22 @@
               {"type": "string"},
               {"type": "array", "items": {"type": "string"}, "uniqueItems": true}
             ]
+          },
+          "type": {
+            "description": "Asset type or types to search for. Common types include IMAGE, VIDEO, AUDIO, OTHER.",
+            "anyOf": [
+              {"type": "string", "enum": ["VIDEO", "IMAGE", "AUDIO", "OTHER"]},
+              {"type": "array", "items": {"type": "string", "enum": ["VIDEO", "IMAGE", "AUDIO", "OTHER"]}, "uniqueItems": true}
+            ]
+          },
+          "any_people": {
+            "description": "Assets must contain at least one of these people. Cannot be used with 'people' (which implies AND logic for all its members) in the same query block.",
+            "type": "array",
+            "items": {
+              "type": "string"
+            },
+            "uniqueItems": true,
+            "minItems": 1
           }
         }
       },
@@ -81,6 +97,16 @@
           "start",
           "end"
         ]
+      },
+      "any_people": {
+        "description": "Assets must contain at least one of these people. Cannot be used with 'people' (which implies AND logic for all its members) in the same query block.",
+        "type": "array",
+        "items": {
+          "type": "string"
+        },
+        "uniqueItems": true,
+        "minItems": 1
       }
     }
   }
+
